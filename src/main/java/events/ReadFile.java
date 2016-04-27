@@ -43,7 +43,6 @@ public class ReadFile implements ActionListener {
 		} catch (NoFileToReadException e) {
 			System.out.println(e.getMessage());
 			JOptionPane.showMessageDialog(null, "Exception: can't open that file: " + e.getMessage());
-			throw new RuntimeException(e);
 		}
 	}
 

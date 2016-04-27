@@ -14,18 +14,24 @@ public class ReadFileMockTest {
 
 	@Test(expected = NoFileToReadException.class)
 	public void shouldThrowExceptionWhenPathIsMissing() throws NoFileToReadException {
+		//given
 		TextField textFieldMock = Mockito.mock(TextField.class);
 		ReadFile readFile = new ReadFile();
+		//when
 		Mockito.when(textFieldMock.getText()).thenReturn("missingPath");
+		//then
 		readFile.fileInArea(Mockito.mock(JTextArea.class), textFieldMock.getText());
 	}
 
 	@Test
 	public void shouldNotThrowExceptionWhenPathExist() throws NoFileToReadException {
+		//given
 		TextField textFieldMock = Mockito.mock(TextField.class);
 		ReadFile readFile = new ReadFile();
 		String path = "C:/Users/wkondrat/workspace/mocking_homework2/txtEditor/src/test/resources/test.txt";
+		//when
 		Mockito.when(textFieldMock.getText()).thenReturn(path);
+		//then
 		readFile.fileInArea(Mockito.mock(JTextArea.class), textFieldMock.getText());
 	}
 

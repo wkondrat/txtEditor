@@ -54,7 +54,6 @@ public class WriteFile implements ActionListener {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 			JOptionPane.showMessageDialog(null, "Exception: " + e.getMessage());
-			throw new RuntimeException(e);
 		}
 	}
 
